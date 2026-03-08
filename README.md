@@ -22,7 +22,7 @@ sudo ./install.sh
 ## Running the Application
 ```bash
 git clone https://github.com/odabasi52/VulnMCP.git
-cd BitirmeCalismalari
+cd VulnMCP
 sudo docker compose up -d --build
 ```
 
