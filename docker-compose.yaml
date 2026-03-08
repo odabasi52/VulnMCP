@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    restart: always
+    ports:
+      - "11435:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    entrypoint: >
+      sh -c "
+      /bin/ollama serve &
+      OLLAMA_PID=$$!
+      sleep 5 &&
+      for i in 1 2 3 4 5; do
+        echo \"Pulling llama3:latest (attempt $$i/5)...\"
+        ollama pull llama3:latest && break
+        sleep 10
+      done &&
+      wait
+      "
+
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: vulnmcp
+      POSTGRES_USER: team
+      POSTGRES_PASSWORD: team.123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  chatbot-app:
+    build:
+      context: .
+      dockerfile: chatbot-app/Dockerfile
+    container_name: chatbot-app
+    restart: always
+    depends_on:
+      - ollama
+      - postgres
+    ports:
+      - "3000:3000"
+
+  chatbot-ui:
+    build: ./chatbot-ui
+    container_name: chatbot-ui
+    restart: always
+    depends_on:
+      - chatbot-app
+    ports:
+      - "80:80"
+
+volumes:
+  ollama_data:
+  postgres_data:

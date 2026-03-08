@@ -1,0 +1,4 @@
+Welcome to the MCP Chatbot Project!
+
+This is a sample document that demonstrates how the Model Context Protocol
+works with your chatbot application.

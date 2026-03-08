@@ -1,0 +1,10 @@
+Frequently Asked Questions
+
+Q: What is MCP?
+A: Model Context Protocol is a standardized way for AI models to access
+   external tools and data sources securely.
+
+Q: Is my data secure?
+A: Yes! All data stays on your local machine. The MCP server only exposes
+   what you explicitly configure it to share.
+
