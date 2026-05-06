@@ -1,4 +1,17 @@
-# VULNMCP - Information about platform
+# What is VulnMCP?
+VulnMCP is a Agentic AI CTF platform which includes three chatbots named FileBot, SQLBot, HealthCheckBot.
+
+You can pratice prompt injection methods to exploit application security vulnerabilities such as path traversal or command injection.
+
+# Who is it for?
+VulnMCP is for everyone who wants to practice prompt injection methods and Agentic AI pentesting freely.
+
+## Note:
+Vulnerable mode does not mean your prompt injection method will directly work. Different models act differently on same prompts and they have their own internal safeguards.
+
+---
+
+# Information about platform
 You can find necessary informations such as:
 - Database layout for SQLBot
 - File and folder structure for FileBot
@@ -7,11 +20,13 @@ You can find necessary informations such as:
 
 ... via [IntroductoryFiles](IntroductoryFiles) folder.
  
-# VULNMCP - Installation (Linux)
+# Installation (Linux)
 
 ## Requirements
 * **Docker:** `docker --version`
 * **Compose:** `docker compose version`
+
+Note: you have to execute docker compose commands on installation root where Dockerfile is located.
 
 If docker is not installed you can install it with `install.sh` script:
 ```bash
