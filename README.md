@@ -1,5 +1,5 @@
 # What is VulnMCP?
-VulnMCP is a Agentic AI CTF platform which includes three chatbots named FileBot, SQLBot, HealthCheckBot.
+VulnMCP is an Agentic AI CTF platform which includes three chatbots named FileBot, SQLBot, HealthCheckBot.
 
 You can pratice prompt injection methods to exploit application security vulnerabilities such as path traversal or command injection.
 
