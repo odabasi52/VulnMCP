@@ -26,7 +26,7 @@ You can find necessary informations such as:
 * **Docker:** `docker --version`
 * **Compose:** `docker compose version`
 
-Note: you have to execute docker compose commands on installation root where Dockerfile is located.
+**Note:** you have to execute docker compose commands on installation root where Dockerfile is located.
 
 If docker is not installed you can install it with `install.sh` script:
 ```bash
